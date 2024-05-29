@@ -1,0 +1,51 @@
+<div class="container text-center mt-4">
+  <h1 type="button" (click)="reload()">CATS</h1>
+</div>
+<div class="container mt-3em">
+  <form class="d-flex" (submit)="searchCats(searchQuery)">
+    <input class="form-control me-2" type="search" placeholder="Search" [(ngModel)]="searchQuery" name="searchQuery">
+    <button class="btn btn-outline-secondary" type="submit">Search</button>
+  </form>
+</div>
+
+<div class="container d-flex flex-row flex-wrap justify-content-center align-items-center">
+    <div class="card m-4" style="width: 18rem" *ngFor="let cat of cats">
+      <img [src]="cat.image" class="card-img-top" type="button" (click)="openModal(cat)" data-bs-toggle="modal" data-bs-target="#catModal">
+      <div class="card-body">
+        <h5 class="card-title">{{ cat.name }}</h5>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">Origin: {{ cat.origin }}</li>
+
+      </ul>
+      <button type="button" class="btn btn-primary" (click)="openModal(cat)" data-bs-toggle="modal" data-bs-target="#catModal">
+        More information
+      </button>
+    </div>
+  </div>
+
+
+  <div class="modal fade" id="catModal" tabindex="-1" aria-labelledby="catModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="catModalLabel">{{ selectedCat?.name }} Cat</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p><strong>Origin:</strong> {{ selectedCat?.origin }}</p>
+          <p><strong>Temperament:</strong> {{ selectedCat?.temperament }}</p>
+          <p><strong>Colors:</strong> {{ selectedCat?.colors}}</p>
+          <p><strong>Description:</strong> {{ selectedCat?.description }}</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  

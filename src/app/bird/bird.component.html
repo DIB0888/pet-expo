@@ -1,0 +1,49 @@
+<div class="container text-center mt-4">
+  <h1 type="button" (click)="reload()">BIRDS</h1>
+</div>
+<div class="container mt-3em">
+  <form class="d-flex" (submit)="searchBirds(searchQuery)">
+    <input class="form-control me-2" type="search" placeholder="Search" [(ngModel)]="searchQuery" name="searchQuery">
+    <button class="btn btn-outline-secondary" type="submit">Search</button>
+  </form>
+</div>
+
+
+<div class="container d-flex flex-row flex-wrap justify-content-center align-items-center">
+    <div class="card m-4" style="width: 18rem" *ngFor="let bird of birds">
+      <img [src]="bird.image" class="card-img-top" type="button" (click)="openModal(bird)" data-bs-toggle="modal" data-bs-target="#birdModal">
+      <div class="card-body">
+        <h5 class="card-title">{{ bird.name }}</h5>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">Origin: {{ bird.family }}</li>
+   
+      </ul>
+      <button type="button" class="btn btn-primary" (click)="openModal(bird)" data-bs-toggle="modal" data-bs-target="#birdModal">
+        More information
+      </button>
+    </div>
+  </div>
+  
+
+  <div class="modal fade" id="birdModal" tabindex="-1" aria-labelledby="catModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="catModalLabel">{{ selectedBird?.name }} Dog</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p><strong>Species:</strong> {{ selectedBird?.species }}</p>
+          <p><strong>Habitat:</strong> {{ selectedBird?.habitat }}</p>
+          <p><strong>Place of found:</strong> {{ selectedBird?.place_of_found }}</p>
+          <p><strong>Diet:</strong> {{ selectedBird?.diet }}</p>
+          <p><strong>Weight:</strong> {{ selectedBird?.weight_kg }} Kg</p>
+          <p><strong>Description:</strong> {{ selectedBird?.description }}</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>

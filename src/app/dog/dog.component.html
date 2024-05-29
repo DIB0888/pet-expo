@@ -1,0 +1,46 @@
+<div class="container text-center mt-4">
+  <h1 type="button" (click)="reload()">DOGS</h1>
+</div>
+<div class="container mt-3em">
+  <form class="d-flex" (submit)="searchDogs(searchQuery)">
+    <input class="form-control me-2" type="search" placeholder="Search" [(ngModel)]="searchQuery" name="searchQuery">
+    <button class="btn btn-outline-secondary" type="submit">Search</button>
+  </form>
+</div>
+
+
+<div class="container d-flex flex-row flex-wrap justify-content-center align-items-center">
+    <div class="card m-4" style="width: 18rem" *ngFor="let dog of dogs">
+      <img [src]="dog.image" class="card-img-top" type="button" (click)="openModal(dog)" data-bs-toggle="modal" data-bs-target="#dogModal">
+      <div class="card-body">
+        <h5 class="card-title">{{ dog.name }}</h5>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">Origin: {{ dog.origin }}</li>
+   
+      </ul>
+      <button type="button" class="btn btn-primary" (click)="openModal(dog)" data-bs-toggle="modal" data-bs-target="#dogModal">
+        More information
+      </button>
+    </div>
+  </div>
+  
+
+  <div class="modal fade" id="dogModal" tabindex="-1" aria-labelledby="catModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="catModalLabel">{{ selectedDog?.name }} Dog</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p><strong>Origin:</strong> {{ selectedDog?.origin }}</p>
+          <p><strong>Temperament:</strong> {{ selectedDog?.temperament }}</p>
+          <p><strong>Description:</strong> {{ selectedDog?.description }}</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
