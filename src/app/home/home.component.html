@@ -1,52 +1,50 @@
 <div class="container">
-    <div class="row">
-      <div class="col">
-        <img src="/assets/img/foto-header.jpeg" class="img-fluid mx-auto d-block" alt="...">
-      </div>
+  <div class="row">
+    <div class="col-lg-10">
+      <h2>Welcome to Our Website</h2>
+      <p>We are team of a big love for Animals</p>
     </div>
-  
-  </div>
-
-  <div class="container d-flex flex-wrap justify-content-center align-items-center">
-    <div class="card m-4 flex-fill" style="width: 18rem;">
-      <img src="/assets/img/cat.jpeg" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">CAT WORLD</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a routerLink="/cat" class="btn btn-primary">Go to cats</a>
-      </div>
-    </div>
-  
-    <div class="card m-4 flex-fill" style="width: 18rem;">
-      <img src="/assets/img/dog.jpeg" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">DOG WORLD</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a routerLink="/dog" class="btn btn-primary">Go to dogs</a>
-      </div>
-    </div>
-  
-    <div class="card m-4 flex-fill" style="width: 18rem;">
-      <img src="/assets/img/bird.jpeg" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">BIRD WORLD</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a routerLink="/bird"  class="btn btn-primary">Go to birds</a>
-      </div>
+    <div class="col-lg-5">
+      <form action="#" class="sign-up-form d-flex">
+        <input type="text" class="form-control" placeholder="Enter email address">
+        <input type="submit" class="btn btn-primary ms-2" value="Sign up">
+      </form>
     </div>
   </div>
-  
-  
+</div>
+
+<div class="p-5 text-center mt-5 background-color position-relative">
+  <h1 class="mb-3">INFORMATION</h1>
+  <h4 class="mb-3">That you will need</h4>
+  <a class="btn btn-secondary" href="#cards-section" role="button">Learn now</a>
+</div>
 
 
-
-
-
-
-
-  <div class="p-5 text-center bg-body-tertiary">
-    <h1 class="mb-3">Heading</h1>
-    <h4 class="mb-3">Subheading</h4>
-    <a data-mdb-ripple-init class="btn btn-primary" href="" role="button">Call to action</a>
+<div id="cards-section" class="container d-flex flex-wrap justify-content-center align-items-center mt-5">
+  <div class="card m-4 flex-fill h-100" style="width: 18rem;">
+    <img src="/assets/img/cat.jpg" class="card-img-top" alt="Cat Image">
+    <div class="card-body d-flex flex-column">
+      <h5 class="card-title">CAT WORLD</h5>
+      <p class="card-text flex-grow-1">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <a routerLink="/cat" class="btn btn-primary mt-auto">Go to cats</a>
+    </div>
   </div>
-  
+
+  <div class="card m-4 flex-fill h-100" style="width: 18rem;">
+    <img src="/assets/img/dog.jpg" class="card-img-top" alt="Dog Image">
+    <div class="card-body d-flex flex-column">
+      <h5 class="card-title">DOG WORLD</h5>
+      <p class="card-text flex-grow-1">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <a routerLink="/dog" class="btn btn-primary mt-auto">Go to dogs</a>
+    </div>
+  </div>
+
+  <div class="card m-4 flex-fill h-100" style="width: 18rem;">
+    <img src="/assets/img/bird.jpg" class="card-img-top" alt="Bird Image">
+    <div class="card-body d-flex flex-column">
+      <h5 class="card-title">BIRD WORLD</h5>
+      <p class="card-text flex-grow-1">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <a routerLink="/bird" class="btn btn-primary mt-auto">Go to birds</a>
+    </div>
+  </div>
+</div>

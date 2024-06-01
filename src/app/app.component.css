@@ -1,0 +1,7 @@
+.full-width-bg {
+    background: url('/assets/img/body.png') no-repeat center center;
+    background-size: cover;
+    width: 100%;
+    padding: 60px 0;
+    color: black; /* Adjust text color for better readability */
+}

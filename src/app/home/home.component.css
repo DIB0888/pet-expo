@@ -1,0 +1,16 @@
+html {
+  scroll-behavior: smooth;
+}
+
+.background-color {
+  background-image: url("https://media.istockphoto.com/id/187786732/photo/golden-retriever-puppy-lying-with-a-parakeet-perched.jpg?s=612x612&w=0&k=20&c=JdDSBZ9VH2wWcmcRvE9vVAoPgnWPl8iym-VmSEMxVQ0=");
+  background-repeat: repeat-x;
+  height: 200%;
+  z-index: 1;
+  
+}
+
+.background-color h1,
+.background-color h4 {
+  text-shadow: 2px 3px 7px rgba(0, 0, 0, 0.5); /* Adjust values as needed */
+}
